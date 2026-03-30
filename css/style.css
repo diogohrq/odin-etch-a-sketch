@@ -52,7 +52,9 @@ h1, h2, h3, h4, h5, h6 {
 
 :root {
   --clr-neutral-1: #E0E2DB;
-  --clr-strong-1: #191716;
+  --clr-strong-1: #191716;  
+  --clr-accent-1: #ECA400;
+  --clr-accent-2: #5FBFF9;
 }
 
 body {
@@ -71,6 +73,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   border: .0625rem solid var(--clr-strong-1);
+  pointer-events: none;
 }
 
 .grid-element {
@@ -78,4 +81,9 @@ body {
   aspect-ratio: 1/1;
   border: .0625rem solid var(--clr-strong-1);
   cursor: pointer;
+  pointer-events: auto;
+}
+
+.hovered {
+  background-color: var(--clr-accent-2);
 }
