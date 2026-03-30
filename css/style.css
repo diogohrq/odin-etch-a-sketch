@@ -117,7 +117,3 @@ body {
   cursor: pointer;
   pointer-events: auto;
 }
-
-.hovered {
-  background-color: var(--clr-accent-2);
-}

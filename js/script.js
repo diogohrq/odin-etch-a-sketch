@@ -14,7 +14,7 @@ const updateSliderLabel = (value) => {
 const createGrid = (size) => {
   for (let i = 0; i < size * size; i++) {
     const gridElement = createGridElement();
-    gridElement.style = `width: calc(100% / ${size})`;
+    gridElement.style = `width: calc(100% / ${size}); `;
     gridContainer.appendChild(gridElement);
   }
 }
@@ -35,9 +35,22 @@ const cleanGrid = () => {
   gridContainer.innerHTML = '';
 }
 
-
 const changeGridElementColor = (element) => {
-  element.classList.add('hovered')
+  if (element.style.backgroundColor == '') {
+    element.style.backgroundColor = getRandomRGB();
+  }
+}
+
+const getRandomNumber = (max) => {
+  return Math.floor(Math.random() * max);
+}
+
+const getRandomRGB = () => {
+  const r = getRandomNumber(255);
+  const g = getRandomNumber(255);
+  const b = getRandomNumber(255);
+
+  return `rgb(${r}, ${g}, ${b})`;
 }
 
 createGrid(headerSlider.value);
